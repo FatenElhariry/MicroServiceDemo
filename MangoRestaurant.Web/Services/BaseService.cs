@@ -22,7 +22,7 @@ namespace MangoRestaurant.Web.Services
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            // _clientFactory.Dispose
         }
 
         public async Task<T> SendAsync<T>(ApiRequest request)

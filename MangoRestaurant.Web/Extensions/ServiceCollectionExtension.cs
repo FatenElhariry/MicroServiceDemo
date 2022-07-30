@@ -11,12 +11,13 @@ namespace MangoRestaurant.Web.Extensions
     public static class ServiceCollectionExtension
     {
 
-        public static void Register(this IServiceCollection services)
+        public static void Register(this IServiceCollection services, ConfigurationManager configuration)
         {
             // services.BuildServiceProvider().GetService<IConfiguration>()
-            services.AddSingleton<StaticDetails>(x => StaticDetails.PopulateStaticDetails(x.GetService<IConfiguration>()));
-            services.AddScoped<IProductService, ProductService>();
+            services.AddSingleton(x => StaticDetails.PopulateStaticDetails(configuration));
             services.AddHttpClient<IProductService, ProductService>();
+            services.AddTransient<IProductService, ProductService>();
+            
         }
 
     }

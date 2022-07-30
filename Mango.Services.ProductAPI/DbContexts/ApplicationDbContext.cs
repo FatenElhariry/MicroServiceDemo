@@ -31,13 +31,13 @@ namespace Mango.Services.ProductAPI.DbContexts
                 modelBuilder.Model.AddEntityType(entity);
             }
 
-            modelBuilder.Entity<Product>().HasData(new Product()
-            {
-                CategoryName = "test",
-                Name = "First Seed item",
-                Price = 1000,
-                Description = "this item is added from seed data in the dbcontext"
-            });
+            //modelBuilder.Entity<Product>().HasData(new Product()
+            //{
+            //    CategoryName = "test",
+            //    Name = "First Seed item",
+            //    Price = 1000,
+            //    Description = "this item is added from seed data in the dbcontext"
+            //});
 
         }
 

@@ -11,8 +11,9 @@ namespace MangoRestaurant.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            
             // 
-            builder.Services.Register();
+            builder.Services.Register(builder.Configuration );
 
             var app = builder.Build();
 

@@ -25,7 +25,10 @@ namespace MangoRestaurant.Web
         public static StaticDetails PopulateStaticDetails(IConfiguration configuration)
         {
             if (_instance == null)
-                _instance = configuration.GetSection("Services").Get<StaticDetails>();
+            {
+                _instance = new StaticDetails();
+                configuration.GetSection("Services").Bind(_instance, opt => opt.BindNonPublicProperties = true);
+            }
             return _instance;
         }
     }

@@ -6,5 +6,5 @@ this demo project to illustrate the idea of using the microservice the base reso
 
 
 
-- References 
-	- [why do we use IhttpClientFactory](https://code-maze.com/using-httpclientfactory-in-asp-net-core-applications/)
+- Tips 
+	- [why do we use IhttpClientFactory?](https://code-maze.com/using-httpclientfactory-in-asp-net-core-applications/)
