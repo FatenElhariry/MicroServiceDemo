@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "AI+UtbeNaxTRAerr16yms7uf5EhUZlfcgvqHfnf+zbIEaECs2/iu/bkZIMhEDt4K+EycfRZtzWs2JDd8BIeQtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Faten-PC\\source\\repos\\MangoRestaurant\\MangoRestaurant.Web\\MangoRestaurant.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Faten-PC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Faten-PC\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Faten-PC\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Faten-PC\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Faten-PC\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

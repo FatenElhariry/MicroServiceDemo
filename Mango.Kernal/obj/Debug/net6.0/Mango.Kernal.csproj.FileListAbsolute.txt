@@ -1,0 +1,12 @@
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\bin\Debug\net6.0\Mango.Kernal.deps.json
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\bin\Debug\net6.0\Mango.Kernal.dll
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\bin\Debug\net6.0\Mango.Kernal.pdb
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.csproj.AssemblyReference.cache
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.AssemblyInfoInputs.cache
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.AssemblyInfo.cs
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.csproj.CoreCompileInputs.cache
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.dll
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\refint\Mango.Kernal.dll
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\Mango.Kernal.pdb
+C:\Users\Faten-PC\source\repos\MangoRestaurant\Mango.Kernal\obj\Debug\net6.0\ref\Mango.Kernal.dll
