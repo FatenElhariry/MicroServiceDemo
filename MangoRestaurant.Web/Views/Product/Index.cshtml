@@ -7,9 +7,12 @@
 
 <h1>Index</h1>
 
+<div class="card-header border">
+    
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create"><i class="bi bi-file-earmark-plus"></i> Create New</a> 
 </p>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -50,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.ImageUrl)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id  }, new { @class="btn btn-success"}) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ },  new { @class = "btn btn-danger"})
             </td>
         </tr>
 }

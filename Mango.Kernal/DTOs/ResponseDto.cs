@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mango.Kernal.DTOs
 {
-    public class ResponseDto
+    public class ResponseDto<TResult> 
     {
         public ResponseDto()
         {
 
         }
-        public ResponseDto(Object result)
+        public ResponseDto(TResult result)
         {
             Result = result;
             if (result != null)
@@ -22,7 +22,7 @@ namespace Mango.Kernal.DTOs
             }
         }
         public bool IsSuccess { get; set; }
-        public object Result { get; set; }
+        public TResult Result { get; set; }
         public string DisplayMessage { get; set; }
         public List<string> ErrorMessages { get; set; }
     }

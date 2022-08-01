@@ -23,31 +23,31 @@ namespace Mango.Services.ProductAPI.Controllers
 
         [Route("{id}")]
         [HttpGet]
-        [Produces(typeof(ResponseDto))]
-        public ActionResult<ResponseDto> get(long id)
+        
+        public ActionResult<ResponseDto<TDto>> get(long id)
         {
             return _service.Get(id);
         }
         [HttpGet]
-        public ActionResult<ResponseDto> get()
+        public ActionResult<ResponseDto<IList<TDto>>> get()
         {
             return _service.GetAll();
         }
 
         [HttpPost]
-        public ActionResult<ResponseDto> Post(TDto entity)
+        public ActionResult<ResponseDto<bool>> Post(TDto entity)
         {
             return _service.Create(entity);
         }
 
         [HttpPut]   
-        public ActionResult<ResponseDto> Put(TDto entity)
+        public ActionResult<ResponseDto<TDto>> Put(TDto entity)
         {
             return _service.Update(entity);
         }
 
         [HttpDelete]
-        public ActionResult<ResponseDto> Delete(long id)
+        public ActionResult<ResponseDto<bool>> Delete(long id)
         {
             return _service.Delete(id);
         }

@@ -18,7 +18,7 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
            // _service = ;
         }
 
-        public override ResponseDto Create(TTDO record)
+        public override ResponseDto<bool> Create(TTDO record)
         {
             try
             {
@@ -27,11 +27,11 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             }
             catch (Exception e)
             {
-                return _handleException(e);
+                return _handleException<bool>(e);
             }
         }
 
-        public override ResponseDto Delete(long Id)
+        public override ResponseDto<bool> Delete(long Id)
         {
             try
             {
@@ -40,11 +40,11 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             catch (Exception e)
             {
 
-                return _handleException(e);
+                return _handleException<bool>(e);
             }
         }
 
-        public override ResponseDto Get(long Id)
+        public override ResponseDto<TTDO> Get(long Id)
         {
             try
             {
@@ -52,12 +52,12 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             }
             catch (Exception e)
             {
-                return _handleException(e);
+                return _handleException<TTDO>(e);
                 throw;
             }
         }
 
-        public override ResponseDto GetAll()
+        public override ResponseDto<IList<TTDO>> GetAll()
         {
             try
             {
@@ -66,11 +66,11 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             catch (Exception e)
             {
 
-                return _handleException(e);
+                return _handleException<IList<TTDO>>(e);
             }
         }
 
-        public override ResponseDto Update(TTDO record)
+        public override ResponseDto<TTDO> Update(TTDO record)
         {
             try
             {
@@ -78,13 +78,13 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             }
             catch (Exception e)
             {
-                return _handleException(e);
+                return _handleException<TTDO>(e);
             }
         }
 
-        ResponseDto _handleException(Exception exception)
+        ResponseDto<T> _handleException<T>(Exception exception)
         {
-            return new ResponseDto() { IsSuccess = false, ErrorMessages = new List<string>() { "Something wrong happened." } };
+            return new ResponseDto<T>() { IsSuccess = false, ErrorMessages = new List<string>() { "Something wrong happened." } };
         }
     }
 }

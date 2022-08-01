@@ -12,10 +12,10 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
         where TTDO : class 
         where TEntity : Entity
     {
-        ResponseDto Get(long Id);
-        ResponseDto GetAll();
-        ResponseDto Update(TTDO record);
-        ResponseDto Delete(long Id);
-        ResponseDto Create(TTDO record);
+        ResponseDto<TTDO> Get(long Id);
+        ResponseDto<IList<TTDO>> GetAll();
+        ResponseDto<TTDO> Update(TTDO record);
+        ResponseDto<bool> Delete(long Id);
+        ResponseDto<bool> Create(TTDO record);
     }
 }

@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace MangoRestaurant.Web.Services.IServices
 {
-    public interface IBaseService:IDisposable
+    public interface IBaseService
     {
-        ResponseDto ResponseModel { get; set; }
-
-        Task<T> SendAsync<T>(ApiRequest request);
+        Task<ResponseDto<T>> SendAsync<T>(ApiRequest request);
 
 
     }

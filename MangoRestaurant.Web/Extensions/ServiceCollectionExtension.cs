@@ -15,8 +15,9 @@ namespace MangoRestaurant.Web.Extensions
         {
             // services.BuildServiceProvider().GetService<IConfiguration>()
             services.AddSingleton(x => StaticDetails.PopulateStaticDetails(configuration));
-            services.AddHttpClient<IProductService, ProductService>();
-            services.AddTransient<IProductService, ProductService>();
+            services.AddHttpClient<IBaseService, BaseService>();
+            services.AddTransient<IBaseService, BaseService>();
+            services.AddTransient(typeof(IGenericService<>), typeof(GenericService<>));
             
         }
 

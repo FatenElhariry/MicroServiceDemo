@@ -21,32 +21,33 @@ namespace Mango.Services.ProductAPI.Infrastructure.Services
             _mapper = mapper;
             _logger = logger;
         }
-        public virtual ResponseDto Create(TTDO record)
+        public virtual  ResponseDto<bool> Create(TTDO record)
         {
             _repository.Create(_mapper.Map<TTDO, TEntity>(record));
-            return new ResponseDto(true);
+            return new ResponseDto<bool>(true);
         }
 
-        public virtual ResponseDto Delete(long Id)
+        public virtual  ResponseDto<bool> Delete(long Id)
         {
             _repository.Delete(Id);
-            return new ResponseDto(true);
+            return new ResponseDto<bool>(true);
         }
 
-        public virtual ResponseDto Get(long Id)
+        public virtual ResponseDto<TTDO> Get(long Id)
         {
-            return new ResponseDto(_repository.Get(Id));
+            return new ResponseDto<TTDO>(_mapper.Map<TEntity, TTDO>(_repository.Get(Id)));
         }
 
-        public virtual ResponseDto GetAll()
+        public virtual ResponseDto<IList<TTDO>> GetAll()
         {
-            return new ResponseDto(_repository.GetAll());
+            var allEntities = _repository.GetAll();
+            return new ResponseDto<IList<TTDO>>(_mapper.Map<IList<TEntity>, IList<TTDO>>(allEntities));
         }
 
-        public virtual ResponseDto Update(TTDO record)
+        public virtual ResponseDto<TTDO> Update(TTDO record)
         {
             var entity = _repository.Update(_mapper.Map<TTDO, TEntity>(record));
-            return new ResponseDto(entity);
+            return new ResponseDto<TTDO>(_mapper.Map<TEntity, TTDO>(entity));
         }
     }
 }

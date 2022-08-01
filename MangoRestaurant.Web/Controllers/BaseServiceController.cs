@@ -13,28 +13,38 @@ namespace MangoRestaurant.Web.Controllers
 {
     public class BaseServiceController<TDto>: Controller
     {
-        private readonly IProductService _productService;
-        public BaseServiceController(IProductService productService)
+        private readonly IGenericService<TDto> _service;
+        public BaseServiceController(IGenericService<TDto> service)
         {
-            _productService = productService;
+            _service = service;
         }
 
         protected async Task<IList<TDto>> _getAll()
         {
-            var response = await _productService.GetAllProductAsync<ResponseDto>();
+            var response = await _service.GetAllAsync();
             if (response != null && response.IsSuccess)
             {
-                return JsonConvert.DeserializeObject<List<TDto>>(JsonConvert.SerializeObject(response.Result));
+                return response.Result;
             }
             return null;
         }
 
         protected async Task<TDto> _getById(long id)
         {
-            var response = await _productService.GetProductByIdAsync<ResponseDto>(id);
+            var response = await _service.GetByIdAsync(id);
             if (response != null && response.IsSuccess)
             {
-                return JsonConvert.DeserializeObject<TDto>(JsonConvert.SerializeObject(response.Result));
+                return response.Result;
+            }
+            return default(TDto);
+        }
+
+        protected async Task<TDto> _create(TDto entity)
+        {
+            var response = await _service.CreateAsync(entity);
+            if (response != null && response.IsSuccess)
+            {
+                return response.Result;
             }
             return default(TDto);
         }

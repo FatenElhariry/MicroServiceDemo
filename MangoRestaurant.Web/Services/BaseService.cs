@@ -13,19 +13,13 @@ namespace MangoRestaurant.Web.Services
 {
     public class BaseService : IBaseService
     {
-        public ResponseDto ResponseModel { get; set ; } = new ResponseDto();
 
         public IHttpClientFactory _clientFactory;
         public BaseService(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
-        public void Dispose()
-        {
-            // _clientFactory.Dispose
-        }
-
-        public async Task<T> SendAsync<T>(ApiRequest request)
+        public async Task<ResponseDto<T>> SendAsync<T>(ApiRequest request)
         {
             try
             {
@@ -61,18 +55,23 @@ namespace MangoRestaurant.Web.Services
 
                 response =  await client.SendAsync(message);
                 string content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(content);
+                return JsonConvert.DeserializeObject<ResponseDto<T>>(content);
             }
             catch (Exception ex)
             {
 
-                var error = new ResponseDto()
+                return new ResponseDto<T>()
                 {
                     ErrorMessages = new List<string>() { Convert.ToString(ex.Message) },
                     IsSuccess = false
-                } ;
-                return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(error));
+            } ;
             }
+        }
+
+        
+        public void Dispose()
+        {
+           
         }
     }
 }
