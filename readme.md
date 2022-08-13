@@ -12,3 +12,7 @@ this demo project to illustrate the idea of using the microservice the base reso
 	- Duende Server identity is used for OpenID connect &rarr; it used for free at the earlier version 
 		- `dotnet new -i Duende.IdentityServer.Templates` to get all template avaliable 
 		- `dotnet new isui` &rarr; to create quickstart template	
+
+
+
+docker image build -t faten/product:1.0.1 

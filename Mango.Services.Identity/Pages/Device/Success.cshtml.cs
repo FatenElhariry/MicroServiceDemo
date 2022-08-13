@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Device;
+namespace Mango.Services.Identity.Pages.Device;
 
 [SecurityHeaders]
 [Authorize]

@@ -4,13 +4,13 @@ using Duende.IdentityServer.Extensions;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Validation;
-using MangoRestaurant.Pages.Consent;
+using Mango.Services.Identity.Pages.Consent;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 
-namespace MangoRestaurant.Pages.Device;
+namespace Mango.Services.Identity.Pages.Device;
 
 [SecurityHeaders]
 [Authorize]

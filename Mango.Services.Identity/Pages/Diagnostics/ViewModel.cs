@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Text;
 using System.Text.Json;
 
-namespace MangoRestaurant.Pages.Diagnostics;
+namespace Mango.Services.Identity.Pages.Diagnostics;
 
 public class ViewModel
 {

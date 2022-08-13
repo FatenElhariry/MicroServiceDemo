@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mango.Services.Identity.Models
+namespace Mango.Services.Identity.Persistences.Data.Entities
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         public ApplicationUser()
         {
-
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
     }
 }

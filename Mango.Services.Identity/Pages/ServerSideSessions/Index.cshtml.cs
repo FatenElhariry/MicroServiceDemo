@@ -4,7 +4,7 @@ using Duende.IdentityServer.Stores;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.ServerSideSessions
+namespace Mango.Services.Identity.Pages.ServerSideSessions
 {
     public class IndexModel : PageModel
     {

@@ -1,7 +1,7 @@
 // Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
-namespace MangoRestaurant.Pages.Ciba;
+namespace Mango.Services.Identity.Pages.Ciba;
 
 public class InputModel
 {

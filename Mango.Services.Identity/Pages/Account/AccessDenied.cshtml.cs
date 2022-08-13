@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Account;
+namespace Mango.Services.Identity.Pages.Account;
 
 public class AccessDeniedModel : PageModel
 {

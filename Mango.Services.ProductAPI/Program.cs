@@ -2,6 +2,7 @@ using Mango.Services.ProductAPI.Controllers;
 using Mango.Services.ProductAPI.DbContexts;
 using Mango.Services.ProductAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Mango.Services.ProductAPI
 {
@@ -17,23 +18,17 @@ namespace Mango.Services.ProductAPI
             {
                 manager.FeatureProviders.Add(new MyControllerFeatureProvider());
             });
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
-            // auto mapper
-            // builder.Services.AddSingleton(MapperConfig.RegisterMaps());
-            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            builder.Services.AddApplicaitonConfiguration(builder.Configuration);
+
             // DB 
             // builder.Services.AddIdentity
 
             builder.Services.AddDbContext<ApplicationDbContext>((option) =>
                             option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            
 
             // Register Services 
-
             builder.Services.RegisterServices();
             var app = builder.Build();
             // builder.Services.BuildServiceProvider().GetService<ApplicationDbContext>();

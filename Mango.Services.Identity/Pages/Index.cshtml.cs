@@ -2,7 +2,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Home;
+namespace Mango.Services.Identity.Pages.Home;
 
 [AllowAnonymous]
 public class Index : PageModel

@@ -1,4 +1,4 @@
-namespace MangoRestaurant.Pages.Grants;
+namespace Mango.Services.Identity.Pages.Grants;
 
 public class ViewModel
 {

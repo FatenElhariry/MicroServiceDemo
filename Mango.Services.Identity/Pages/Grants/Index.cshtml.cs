@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Grants;
+namespace Mango.Services.Identity.Pages.Grants;
 
 [SecurityHeaders]
 [Authorize]

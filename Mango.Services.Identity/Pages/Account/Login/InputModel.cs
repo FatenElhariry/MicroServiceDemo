@@ -4,7 +4,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace MangoRestaurant.Pages.Login;
+namespace Mango.Services.Identity.Pages.Login;
 
 public class InputModel
 {

@@ -1,4 +1,4 @@
-namespace MangoRestaurant.Pages.Login;
+namespace Mango.Services.Identity.Pages.Login;
 
 public class LoginOptions
 {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Ciba;
+namespace Mango.Services.Identity.Pages.Ciba;
 
 [SecurityHeaders]
 [Authorize]

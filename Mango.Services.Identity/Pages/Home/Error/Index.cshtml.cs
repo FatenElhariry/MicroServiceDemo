@@ -2,7 +2,7 @@ using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace MangoRestaurant.Pages.Error;
+namespace Mango.Services.Identity.Pages.Error;
 
 [AllowAnonymous]
 [SecurityHeaders]

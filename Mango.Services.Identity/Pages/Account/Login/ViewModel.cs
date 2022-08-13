@@ -1,7 +1,7 @@
 // Copyright (c) Duende Software. All rights reserved.
 // See LICENSE in the project root for license information.
 
-namespace MangoRestaurant.Pages.Login;
+namespace Mango.Services.Identity.Pages.Login;
 
 public class ViewModel
 {

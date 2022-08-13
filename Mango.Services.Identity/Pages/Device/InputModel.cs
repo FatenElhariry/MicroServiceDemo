@@ -1,4 +1,4 @@
-namespace MangoRestaurant.Pages.Device;
+namespace Mango.Services.Identity.Pages.Device;
 
 public class InputModel
 {
