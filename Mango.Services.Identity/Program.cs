@@ -2,6 +2,8 @@ using Mango.Services.Identity;
 using Mango.Services.Identity.Initializer;
 using Mango.Services.Identity.Models;
 using Mango.Services.Identity.Persistences;
+using Mango.Services.Identity.Persistences.Data.Entities;
+using Mango.Services.Identity.Persistences.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +36,7 @@ var IdentityServerBuilder = builder.Services.AddIdentityServer(options =>
     .AddAspNetIdentity<ApplicationUser>();
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+builder.Services.AddTransient<IApplicationUserStore, ApplicationUserStore>();
 
 // use the default credential for the dev purpose 
 IdentityServerBuilder.AddDeveloperSigningCredential();

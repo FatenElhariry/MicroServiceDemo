@@ -5,6 +5,7 @@ using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
 using Duende.IdentityServer.Test;
 using Mango.Services.Identity.Persistences.Data.Entities;
+using Mango.Services.Identity.Persistences.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -19,9 +20,7 @@ public class Index : PageModel
 {
     
 
-    private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
-    private readonly TestUserStore _users;
+    private readonly IApplicationUserStore _users;
     private readonly IIdentityServerInteractionService _interaction;
     private readonly IEventService _events;
     private readonly IAuthenticationSchemeProvider _schemeProvider;
@@ -37,7 +36,7 @@ public class Index : PageModel
         IAuthenticationSchemeProvider schemeProvider,
         IIdentityProviderStore identityProviderStore,
         IEventService events,
-        IUserStore<ApplicationUser> users = null)
+        IApplicationUserStore users)
     {
         // this is where you would plug in your own custom identity management library (e.g. ASP.NET Identity)
         _users = users ?? throw new Exception("Please call 'AddTestUsers(TestUsers.Users)' on the IIdentityServerBuilder in Startup or remove the TestUserStore from the AccountController.");
@@ -99,7 +98,7 @@ public class Index : PageModel
             if (_users.ValidateCredentials(Input.Username, Input.Password))
             {
                 var user = _users.FindByUsername(Input.Username);
-                await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username, clientId: context?.Client.ClientId));
+                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id, $"{user.FirstName} {user.LastName}", clientId: context?.Client.ClientId));
 
                 // only set explicit expiration here if user chooses "remember me". 
                 // otherwise we rely upon expiration configured in cookie middleware.
@@ -114,9 +113,9 @@ public class Index : PageModel
                 };
 
                 // issue authentication cookie with subject ID and username
-                var isuser = new IdentityServerUser(user.SubjectId)
+                var isuser = new IdentityServerUser(user.Id)
                 {
-                    DisplayName = user.Username
+                    DisplayName = user.UserName
                 };
 
                 await HttpContext.SignInAsync(isuser, props);
